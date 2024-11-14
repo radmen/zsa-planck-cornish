@@ -6,11 +6,11 @@ on:
       layout_id:
         description: "Layout id available in URL https://configure.zsa.io/voyager/layouts/[ID_IS_HERE]/latest"
         required: true
-        default: "g7jjw"
+        default: "jYKpZ"
       layout_geometry:
         description: "voyager | moonlander | ergodox_ez | planck_ez | planck_ez/glow"
         required: true
-        default: "voyager"
+        default: "planck_ez/glow"
 
 permissions:
   contents: write
