@@ -3,6 +3,7 @@
 #include "muse.h"
 #endif
 #include "eeprom.h"
+#include "features/achordion.h"
 
 enum planck_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
@@ -145,6 +146,8 @@ bool rgb_matrix_indicators_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (!process_achordion(keycode, record)) { return false; }
+
   switch (keycode) {
 
     case RGB_SLD:
@@ -203,6 +206,7 @@ void encoder_update(bool clockwise) {
 }
 
 void matrix_scan_user(void) {
+    achordion_task();
 #ifdef AUDIO_ENABLE
     if (muse_mode) {
         if (muse_counter == 0) {

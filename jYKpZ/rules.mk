@@ -1,4 +1,5 @@
 SRC += muse.c
+SRC += features/achordion.c
 CONSOLE_ENABLE = no
 COMMAND_ENABLE = no
 MOUSEKEY_ENABLE = no
