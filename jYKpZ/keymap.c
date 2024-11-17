@@ -6,6 +6,34 @@
 
 enum planck_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
+  ST_MACRO_0,
+  ST_MACRO_1,
+  ST_MACRO_2,
+  ST_MACRO_3,
+  ST_MACRO_4,
+  ST_MACRO_5,
+  ST_MACRO_6,
+  ST_MACRO_7,
+  ST_MACRO_8,
+  ST_MACRO_9,
+  ST_MACRO_10,
+  ST_MACRO_11,
+  ST_MACRO_12,
+  ST_MACRO_13,
+  ST_MACRO_14,
+  ST_MACRO_15,
+  ST_MACRO_16,
+  ST_MACRO_17,
+  ST_MACRO_18,
+  ST_MACRO_19,
+  ST_MACRO_20,
+  ST_MACRO_21,
+  ST_MACRO_22,
+  ST_MACRO_23,
+  ST_MACRO_24,
+  ST_MACRO_25,
+  ST_MACRO_26,
+  ST_MACRO_27,
 };
 
 
@@ -34,6 +62,7 @@ enum planck_layers {
   _LAYER5,
   _LAYER6,
   _LAYER7,
+  _LAYER8,
 };
 
 #define LOWER MO(_LOWER)
@@ -44,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_NO,          KC_NO,          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           
     MT(MOD_LCTL, KC_A),MT(MOD_LALT, KC_S),MT(MOD_RGUI, KC_D),MT(MOD_LSFT, KC_F),KC_G,           KC_NO,          KC_NO,          KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_RGUI, KC_K),MT(MOD_LALT, KC_L),MT(MOD_RCTL, KC_SCLN),
     MT(MOD_RALT, KC_Z),KC_X,           LT(5,KC_C),     LT(7,KC_V),     KC_B,           KC_NO,          KC_NO,          KC_N,           LT(7,KC_M),     LT(5,KC_COMMA), KC_DOT,         MT(MOD_RALT, KC_SLASH),
-    KC_NO,          KC_NO,          MT(MOD_LCTL, KC_ESCAPE),KC_SPACE,       OSL(4),         KC_NO,          KC_NO,          MT(MOD_LGUI, KC_BSPC),OSL(5),         OSL(6),         KC_NO,          KC_NO
+    KC_NO,          KC_NO,          MT(MOD_LCTL, KC_ESCAPE),KC_SPACE,       OSL(4),         KC_NO,          KC_NO,          MT(MOD_LGUI, KC_BSPC),OSL(8),         OSL(6),         KC_NO,          KC_NO
   ),
 
   [_LOWER] = LAYOUT_planck_grid(
@@ -79,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRAVE,       KC_LBRC,        KC_RBRC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LCBR,        KC_RCBR,        KC_TRANSPARENT, 
     MT(MOD_LCTL, KC_1),MT(MOD_LALT, KC_2),MT(MOD_LGUI, KC_3),MT(MOD_LSFT, KC_4),KC_5,           KC_TRANSPARENT, KC_TRANSPARENT, KC_6,           MT(MOD_RSFT, KC_7),MT(MOD_RGUI, KC_8),MT(MOD_LALT, KC_9),MT(MOD_RCTL, KC_0),
     KC_BSLS,        KC_LPRN,        KC_RPRN,        KC_QUOTE,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_EQUAL,       KC_MINUS,       KC_LABK,        KC_RABK,        KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, OSL(7),         KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
 
   [_LAYER6] = LAYOUT_planck_grid(
@@ -94,6 +123,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TD(DANCE_5),    TD(DANCE_6),    TD(DANCE_7),    TD(DANCE_8),    KC_PERC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_CIRC,        TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   TD(DANCE_12),   
     KC_PIPE,        KC_LPRN,        KC_RPRN,        KC_DQUO,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_PLUS,        KC_UNDS,        KC_LABK,        KC_RABK,        KC_QUES,        
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
+  ),
+
+  [_LAYER8] = LAYOUT_planck_grid(
+    ST_MACRO_0,     ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,     ST_MACRO_4,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     ST_MACRO_7,     KC_TRANSPARENT, 
+    ST_MACRO_8,     ST_MACRO_9,     ST_MACRO_10,    ST_MACRO_11,    ST_MACRO_12,    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_13,    ST_MACRO_14,    ST_MACRO_15,    ST_MACRO_16,    ST_MACRO_17,    
+    ST_MACRO_18,    ST_MACRO_19,    ST_MACRO_20,    ST_MACRO_21,    ST_MACRO_22,    KC_TRANSPARENT, KC_TRANSPARENT, ST_MACRO_23,    ST_MACRO_24,    ST_MACRO_25,    ST_MACRO_26,    ST_MACRO_27,    
+    KC_TRANSPARENT, KC_TRANSPARENT, OSM(MOD_LSFT),  KC_TRANSPARENT, CW_TOGG,        KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
 
 };
@@ -167,6 +203,146 @@ bool rgb_matrix_indicators_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case ST_MACRO_0:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_W));
+    }
+    break;
+    case ST_MACRO_1:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_S));
+    }
+    break;
+    case ST_MACRO_2:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_F) SS_DELAY(100) SS_TAP(X_O) SS_DELAY(100) SS_TAP(X_R));
+    }
+    break;
+    case ST_MACRO_3:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_A) SS_DELAY(100) SS_TAP(X_C) SS_DELAY(100) SS_TAP(X_H));
+    }
+    break;
+    case ST_MACRO_4:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_E));
+    }
+    break;
+    case ST_MACRO_5:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_F) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_X) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCLN)));
+    }
+    break;
+    case ST_MACRO_6:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_SPACE) SS_DELAY(100) SS_TAP(X_G) SS_DELAY(100) SS_TAP(X_S));
+    }
+    break;
+    case ST_MACRO_7:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_P) SS_DELAY(100) SS_LSFT(SS_TAP(X_SCLN)));
+    }
+    break;
+    case ST_MACRO_8:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_G) SS_DELAY(100) SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_T));
+    }
+    break;
+    case ST_MACRO_9:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_F) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_D));
+    }
+    break;
+    case ST_MACRO_10:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_T) SS_DELAY(100) SS_TAP(X_R) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_E));
+    }
+    break;
+    case ST_MACRO_11:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_F) SS_DELAY(100) SS_TAP(X_A) SS_DELAY(100) SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_S) SS_DELAY(100) SS_TAP(X_E));
+    }
+    break;
+    case ST_MACRO_12:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_N) SS_DELAY(100) SS_TAP(X_U) SS_DELAY(100) SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_L));
+    }
+    break;
+    case ST_MACRO_13:
+    if (record->event.pressed) {
+      SEND_STRING(SS_LSFT(SS_TAP(X_DOT)) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_LSFT(SS_TAP(X_RBRC)));
+    }
+    break;
+    case ST_MACRO_14:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_LBRC) SS_DELAY(100) SS_TAP(X_C));
+    }
+    break;
+    case ST_MACRO_15:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_RBRC) SS_DELAY(100) SS_TAP(X_C));
+    }
+    break;
+    case ST_MACRO_16:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_Z) SS_DELAY(100) SS_TAP(X_F) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_LSFT(SS_TAP(X_LBRC)));
+    }
+    break;
+    case ST_MACRO_17:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(100) SS_TAP(X_COMMA) SS_DELAY(100) SS_TAP(X_SPACE));
+    }
+    break;
+    case ST_MACRO_18:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_S));
+    }
+    break;
+    case ST_MACRO_19:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_A) SS_DELAY(100) SS_TAP(X_S));
+    }
+    break;
+    case ST_MACRO_20:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_F));
+    }
+    break;
+    case ST_MACRO_21:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_L) SS_DELAY(100) SS_TAP(X_S) SS_DELAY(100) SS_TAP(X_E));
+    }
+    break;
+    case ST_MACRO_22:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_W) SS_DELAY(100) SS_TAP(X_H) SS_DELAY(100) SS_TAP(X_E) SS_DELAY(100) SS_TAP(X_N));
+    }
+    break;
+    case ST_MACRO_23:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_V) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_LSFT(SS_TAP(X_RBRC)));
+    }
+    break;
+    case ST_MACRO_24:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_D) SS_DELAY(100) SS_TAP(X_O));
+    }
+    break;
+    case ST_MACRO_25:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_D) SS_DELAY(100) SS_TAP(X_P));
+    }
+    break;
+    case ST_MACRO_26:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_Z) SS_DELAY(100) SS_TAP(X_F) SS_DELAY(100) SS_TAP(X_I) SS_DELAY(100) SS_TAP(X_LBRC));
+    }
+    break;
+    case ST_MACRO_27:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_ESCAPE) SS_DELAY(100) SS_LSFT(SS_TAP(X_MINUS)));
+    }
+    break;
 
     case RGB_SLD:
         if (rawhid_state.rgb_control) {
