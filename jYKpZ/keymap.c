@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_planck_grid(
     KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_NO,          KC_NO,          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           
     MT(MOD_LCTL, KC_A),MT(MOD_LALT, KC_S),MT(MOD_RGUI, KC_D),MT(MOD_LSFT, KC_F),KC_G,           KC_NO,          KC_NO,          KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_RGUI, KC_K),MT(MOD_LALT, KC_L),MT(MOD_RCTL, KC_SCLN),
-    MT(MOD_RALT, KC_Z),KC_X,           KC_C,           KC_V,           KC_B,           KC_NO,          KC_NO,          KC_N,           KC_M,           KC_COMMA,       KC_DOT,         MT(MOD_RALT, KC_SLASH),
+    MT(MOD_RALT, KC_Z),KC_X,           LT(5,KC_C),     LT(7,KC_V),     KC_B,           KC_NO,          KC_NO,          KC_N,           LT(7,KC_M),     LT(5,KC_COMMA), KC_DOT,         MT(MOD_RALT, KC_SLASH),
     KC_NO,          KC_NO,          MT(MOD_LCTL, KC_ESCAPE),KC_SPACE,       OSL(4),         KC_NO,          KC_NO,          MT(MOD_LGUI, KC_BSPC),OSL(5),         OSL(6),         KC_NO,          KC_NO
   ),
 
@@ -76,9 +76,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_LAYER5] = LAYOUT_planck_grid(
-    KC_GRAVE,       KC_LBRC,        KC_RBRC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_GRAVE,       KC_LBRC,        KC_RBRC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LCBR,        KC_RCBR,        KC_TRANSPARENT, 
     MT(MOD_LCTL, KC_1),MT(MOD_LALT, KC_2),MT(MOD_LGUI, KC_3),MT(MOD_LSFT, KC_4),KC_5,           KC_TRANSPARENT, KC_TRANSPARENT, KC_6,           MT(MOD_RSFT, KC_7),MT(MOD_RGUI, KC_8),MT(MOD_LALT, KC_9),MT(MOD_RCTL, KC_0),
-    KC_BSLS,        KC_QUOTE,       KC_LPRN,        KC_RPRN,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_EQUAL,       KC_MINUS,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_BSLS,        KC_LPRN,        KC_RPRN,        KC_QUOTE,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_EQUAL,       KC_MINUS,       KC_LABK,        KC_RABK,        KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, OSL(7),         KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
 
@@ -90,9 +90,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_LAYER7] = LAYOUT_planck_grid(
-    KC_TILD,        KC_LCBR,        KC_RCBR,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TILD,        KC_LBRC,        KC_RBRC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LCBR,        KC_RCBR,        KC_TRANSPARENT, 
     TD(DANCE_5),    TD(DANCE_6),    TD(DANCE_7),    TD(DANCE_8),    KC_PERC,        KC_TRANSPARENT, KC_TRANSPARENT, KC_CIRC,        TD(DANCE_9),    TD(DANCE_10),   TD(DANCE_11),   TD(DANCE_12),   
-    KC_PIPE,        KC_DQUO,        KC_LPRN,        KC_RPRN,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_PLUS,        KC_UNDS,        KC_LABK,        KC_RABK,        KC_QUES,        
+    KC_PIPE,        KC_LPRN,        KC_RPRN,        KC_DQUO,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_PLUS,        KC_UNDS,        KC_LABK,        KC_RABK,        KC_QUES,        
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
 
@@ -111,11 +111,11 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
 
     [4] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {28,203,236}, {28,203,236}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {28,203,236}, {28,203,236}, {28,203,236}, {28,203,236}, {28,203,236}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {28,203,236}, {28,203,236}, {28,203,236}, {28,203,236}, {28,203,236}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {28,203,236}, {0,0,0}, {0,0,0}, {0,0,0} },
 
-    [5] = { {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
+    [5] = { {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {203,129,219}, {203,129,219}, {0,0,0}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {0,0,0}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {203,129,219}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
     [6] = { {0,0,0}, {105,192,219}, {105,192,219}, {105,192,219}, {105,192,219}, {0,0,0}, {0,0,0}, {0,0,0}, {105,192,219}, {105,192,219}, {0,0,0}, {105,192,219}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {105,192,219}, {105,192,219}, {105,192,219}, {105,192,219}, {0,0,0}, {105,192,219}, {105,192,219}, {105,192,219}, {105,192,219}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
-    [7] = { {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {0,0,0}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
+    [7] = { {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {203,201,230}, {203,201,230}, {0,0,0}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {0,0,0}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {203,201,230}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
 
 };
 
