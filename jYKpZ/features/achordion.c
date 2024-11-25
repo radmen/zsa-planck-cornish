@@ -335,6 +335,14 @@ __attribute__((weak)) bool achordion_chord(uint16_t tap_hold_keycode,
                                            keyrecord_t* tap_hold_record,
                                            uint16_t other_keycode,
                                            keyrecord_t* other_record) {
+  if (tap_hold_keycode == MT(MOD_LSFT, KC_F)) {
+    switch (other_keycode) {
+      case MT(MOD_LALT, KC_3):
+      case KC_4:
+        return true;
+    }
+  }
+
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
