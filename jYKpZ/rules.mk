@@ -1,6 +1,6 @@
 SRC += muse.c
 SRC += features/achordion.c
-CONSOLE_ENABLE = no
+CONSOLE_ENABLE = yes
 COMMAND_ENABLE = no
 MOUSEKEY_ENABLE = no
 ORYX_ENABLE = yes

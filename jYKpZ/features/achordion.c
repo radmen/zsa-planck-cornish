@@ -21,6 +21,7 @@
  */
 
 #include "achordion.h"
+#include "print.h"
 
 #if !defined(IS_QK_MOD_TAP)
 // Attempt to detect out-of-date QMK installation, which would fail with
@@ -335,6 +336,12 @@ __attribute__((weak)) bool achordion_chord(uint16_t tap_hold_keycode,
                                            keyrecord_t* tap_hold_record,
                                            uint16_t other_keycode,
                                            keyrecord_t* other_record) {
+  dprintf(
+      "achordion_chord: tap hold key: 0x%04X, col: %2u, row: %2u | other key: 0x%04X, col: %2u, row: %2u", 
+      tap_hold_keycode, tap_hold_record->event.key.col, tap_hold_record->event.key.row,
+      other_keycode, other_record->event.key.col, other_record->event.key.row
+  );
+
   if (tap_hold_keycode == MT(MOD_LSFT, KC_F)) {
     switch (other_keycode) {
       case MT(MOD_RSFT, KC_1):
