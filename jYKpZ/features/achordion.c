@@ -337,7 +337,7 @@ __attribute__((weak)) bool achordion_chord(uint16_t tap_hold_keycode,
                                            uint16_t other_keycode,
                                            keyrecord_t* other_record) {
   dprintf(
-      "achordion_chord: tap hold key: 0x%04X, col: %2u, row: %2u | other key: 0x%04X, col: %2u, row: %2u", 
+      "achordion_chord: tap hold key: 0x%04X, col: %2u, row: %2u | other key: 0x%04X, col: %2u, row: %2u\n", 
       tap_hold_keycode, tap_hold_record->event.key.col, tap_hold_record->event.key.row,
       other_keycode, other_record->event.key.col, other_record->event.key.row
   );
