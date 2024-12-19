@@ -342,16 +342,6 @@ __attribute__((weak)) bool achordion_chord(uint16_t tap_hold_keycode,
       other_keycode, other_record->event.key.col, other_record->event.key.row
   );
 
-  if (tap_hold_keycode == MT(MOD_LSFT, KC_F)) {
-    switch (other_keycode) {
-      case MT(MOD_RSFT, KC_1):
-      case MT(MOD_RGUI, KC_2):
-      case MT(MOD_LALT, KC_3):
-      case MT(MOD_RCTL, KC_4):
-        return true;
-    }
-  }
-
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
