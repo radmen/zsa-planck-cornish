@@ -74,16 +74,21 @@ jobs:
           git merge -Xignore-all-space oryx
           git push
 
-      - name: Checkout the right firmware branch
+      - name: Update QMK firmware submodule to latest version (${{ steps.download-layout-source.outputs.firmware_version }})
         run: |
           cd qmk_firmware
-          git submodule update --init --remote
-          git fetch origin firmware${{ steps.download-layout-source.outputs.firmware_version }}
-          git checkout -B firmware${{ steps.download-layout-source.outputs.firmware_version }} origin/firmware${{ steps.download-layout-source.outputs.firmware_version }}
-          git submodule update --init --recursive
+          git fetch --depth=1 origin firmware${{ steps.download-layout-source.outputs.firmware_version }}
+          git checkout -B firmware${{ steps.download-layout-source.outputs.firmware_version }} FETCH_HEAD
+          git submodule update --init --recursive --depth=1
+          cd ..
+          git add qmk_firmware
+          git commit -m "✨(qmk): Update firmware" || true
+          git push
 
       - name: Build qmk docker image
-        run: docker build -t qmk .
+        run: |
+          cd qmk_firmware
+          docker build -t qmk .
 
       - name: Build the layout
         id: build-layout
