@@ -8,8 +8,18 @@ on:
         required: true
         default: "jYKpZ"
       layout_geometry:
-        description: "voyager | moonlander | ergodox_ez | planck_ez | planck_ez/glow"
-        required: true
+        description: "Keyboard type"
+        type: choice
+        options:
+          - voyager
+          - moonlander
+          - ergodox_ez
+          - ergodox_ez/stm32/glow
+          - ergodox_ez/stm32/shine
+          - ergodox_ez/m32u4/glow
+          - ergodox_ez/m32u4/shine
+          - planck_ez
+          - planck_ez/glow
         default: "planck_ez/glow"
 
 permissions:
@@ -90,11 +100,6 @@ jobs:
           # Copy layout files to the qmk folder
           rm -rf ${keyboard_directory}/${{ github.event.inputs.layout_geometry }}/keymaps/${{ github.event.inputs.layout_id }}
           mkdir -p ${keyboard_directory}/${{ github.event.inputs.layout_geometry }}/keymaps && cp -r ${{ github.event.inputs.layout_id }} "$_"
-
-          echo "!!! DEBUG"
-          echo "${keyboard_directory}/${{ github.event.inputs.layout_geometry }}/keymaps"
-          ls -R ${keyboard_directory}/${{ github.event.inputs.layout_geometry }}
-          echo "!!! DEBUG END"
           
           # Build the layout
           docker run -v ./qmk_firmware:/root --rm qmk /bin/sh -c "
